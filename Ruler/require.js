@@ -3,9 +3,7 @@ let relyruler = "";
 if(fileExist('hiker://files/libs/' + md5(rulerurl) + '.js')){
     relyruler = rulerurl;
 }
-if(relyfile==""){
-    let cjFile = request(rulerurl,{timeout:3000});
-
+if(relyruler==""){
     relyruler = rulerurl;
 
 }
