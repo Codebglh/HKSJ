@@ -35,5 +35,5 @@ function yiji(){
             d.push(eval(yijimenu[i]))
         }
     }
-
+    setResult(d);
 }
