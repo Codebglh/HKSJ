@@ -1,5 +1,6 @@
-function yiji(){
+function first(){
     let d = [];
+    let list ;
     let yijimenu = [{
         title: "收藏", url: "hiker://collection", pic_url: "hiker://files/bgHouse/src/system/1.svg", col_type: "icon_5"
     }, {
@@ -25,15 +26,41 @@ function yiji(){
     }, {
         title: "搜索", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
             require(config.依赖);
-            sousuo();
+            search();
         }), pic_url: "hiker://files/bgHouse/src/system/22.svg", col_type: "icon_5"
     }, {
         col_type: "line"
     }]
+    let headers = {
+        'User-Agent': PC_UA
+    }
     if (MY_PAGE == 1) {
         for (var i in yijimenu) {
             d.push(eval(yijimenu[i]))
         }
     }
+    try {
+        MY_URL = "https://waptv.sogou.com/napi/video/classlist?abtest=0&iploc=CN1304&spver=&listTab=teleplay&filter=&start="+ MY_PAGE-1 +"&len=15&fr=filter";
+       let data  = JSON.parse(request(MY_URL,{headers: headers}));
+       list=data.listData.results;
+    }catch (e) {
+        log(e.message)
+    }
+    for (var i in list) {
+        d.push({
+            title: list[i].name,
+            img: list[i].img + '@Referer=',
+            url: JYconfig['erjimode']!=2?"hiker://empty##" + list[i].url + "#immersiveTheme##autoCache#":list[i].name + seachurl,
+            desc: list[i].desc,
+
+        });
+    }
     setResult(d);
+}
+function shezi(){
+
+}
+
+function search(){
+
 }
