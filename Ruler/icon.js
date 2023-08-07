@@ -51,8 +51,7 @@ function F(){
                 return "toast://复制失败";
             }
         }),
-    },
-        {
+    }, {
         col_type: "icon_2",
         title: "上传网络图片获取链接",
         pic_url:"hiker://files/bgHouse/src/system/19.svg",
@@ -76,10 +75,19 @@ function F(){
                 d.push({
                     col_type: "icon_small_4",
                     title: list[i],
+                    extra:{longClick: [ {
+                            title: " 删除 ",
+                            js: $.toString((pic) => {
+                                deleteFile(pic)
+                                refreshPage();
+                                toast("轮播已停止");
+                            },pic),
+                        },]},
                     pic_url: pic,
                     url: $("#noLoading#").lazyRule((pic) => {
                         copy(pic);
                         return "hiker://empty";
+
                     }, pic),
                 });
             };
@@ -92,6 +100,14 @@ function F(){
                 d.push({
                     col_type: "icon_small_4",
                     title: list[i],
+                    extra:{longClick: [ {
+                            title: " 删除 ",
+                            js: $.toString((pic) => {
+                                deleteFile(pic)
+                                refreshPage();
+                                toast("轮播已停止");
+                            },pic),
+                        },]},
                     pic_url: pic,
                     url: $("#noLoading#").lazyRule((pic) => {
                         copy(pic);
@@ -108,6 +124,14 @@ function F(){
                 d.push({
                     col_type: "icon_small_4",
                     title: list[i],
+                    extra:{longClick: [ {
+                            title: " 删除 ",
+                            js: $.toString((pic) => {
+                                deleteFile(pic)
+                                refreshPage();
+                                toast("轮播已停止");
+                            },pic),
+                        },]},
                     pic_url: pic,
                     url: $("#noLoading#").lazyRule((pic) => {
                         copy(pic);
@@ -124,6 +148,14 @@ function F(){
                 d.push({
                     col_type: "movie_2",
                     title: list[i],
+                    extra:{longClick: [ {
+                            title: " 删除 ",
+                            js: $.toString((pic) => {
+                                deleteFile(pic)
+                                refreshPage();
+                                toast("轮播已停止");
+                            },pic),
+                        },]},
                     pic_url: pic,
                     url: $("#noLoading#").lazyRule((pic) => {
                         copy(pic);
@@ -131,37 +163,7 @@ function F(){
                     }, pic),
                 });
             };
-            d.push({
-                col_type: "icon_2",
-                title: "上传本地图片获取链接",
-                pic_url:"https://cdn.jsdelivr.net/gh/Codebglh/icon@0.0.4/HKSJ/system/+19.svg",
-                url: "fileSelect://" + $.toString(()=>{
-                    let file = $.require("https://hikerfans.com/weisyr/js/file.js");
-                    let dir = "hiker://files/bgHouse/src/"+pathlist[getVar("icon")];
-                    let name = file.getName(input).replace("_fileSelect_", "");
-                    let path = dir + name;
-                    if(file.copyFile(input, getPath(path).slice(7), true)){
-                        return "copy://"+path;
-                    }else{
-                        return "toast://复制失败";
-                    }
-                }),
-            }, {
-                col_type: "icon_2",
-                title: "上传网络图片获取链接",
-                pic_url:"https://cdn.jsdelivr.net/gh/Codebglh/icon@0.0.4/HKSJ/system/+19.svg",
-                url: "fileSelect://" + $.toString(()=>{
-                    let file = $.require("https://hikerfans.com/weisyr/js/file.js");
-                    let dir = "hiker://files/bgHouse/img/";
-                    let name = file.getName(input).replace("_fileSelect_", "");
-                    let path = dir + name;
-                    if(file.copyFile(input, getPath(path).slice(7), true)){
-                        return "copy://"+path;
-                    }else{
-                        return "toast://复制失败";
-                    }
-                }),
-            });}else if(getVar("icon")==4)
+            }else if(getVar("icon")==4)
             {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
@@ -170,6 +172,14 @@ function F(){
                 d.push({
                     col_type: "icon_small_4",
                     title: list[i],
+                    extra:{longClick: [ {
+                            title: " 删除 ",
+                            js: $.toString((pic) => {
+                                deleteFile(pic)
+                                refreshPage();
+                                toast("轮播已停止");
+                            },pic),
+                        },]},
                     pic_url: pic,
                     url: $("#noLoading#").lazyRule((pic) => {
                         copy(pic);
@@ -177,37 +187,7 @@ function F(){
                     }, pic),
                 });
             };
-            d.push({
-                col_type: "icon_2",
-                title: "上传本地图片获取链接",
-                pic_url:"https://cdn.jsdelivr.net/gh/Codebglh/icon@0.0.4/HKSJ/system/+19.svg",
-                url: "fileSelect://" + $.toString(()=>{
-                    let file = $.require("https://hikerfans.com/weisyr/js/file.js");
-                    let dir = "hiker://files/bgHouse/src/"+pathlist[getVar("icon")];
-                    let name = file.getName(input).replace("_fileSelect_", "");
-                    let path = dir + name;
-                    if(file.copyFile(input, getPath(path).slice(7), true)){
-                        return "copy://"+path;
-                    }else{
-                        return "toast://复制失败";
-                    }
-                }),
-            }, {
-                col_type: "icon_2",
-                title: "上传网络图片获取链接",
-                pic_url:"https://cdn.jsdelivr.net/gh/Codebglh/icon@0.0.4/HKSJ/system/+19.svg",
-                url: "fileSelect://" + $.toString(()=>{
-                    let file = $.require("https://hikerfans.com/weisyr/js/file.js");
-                    let dir = "hiker://files/bgHouse/img/";
-                    let name = file.getName(input).replace("_fileSelect_", "");
-                    let path = dir + name;
-                    if(file.copyFile(input, getPath(path).slice(7), true)){
-                        return "copy://"+path;
-                    }else{
-                        return "toast://复制失败";
-                    }
-                }),
-            });}
+            }
 
     setResult(d);
 }
