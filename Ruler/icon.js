@@ -59,12 +59,22 @@ function F(){
         col_type: "icon_2",
         title: "上传网络图片",
         pic_url:"hiker://files/bgHouse/src/system/19.svg",
-        url: $("","请输入地址").input(function () {
+        url: $("https|hiker|绝对地址","请输入地址").input(function () {
             let name=input.split("/").at(-1);
-
+            let file = $.require("https://hikerfans.com/weisyr/js/file.js");
             require(config.依赖);
             let dir = "hiker://files/bgHouse/src/"+pathlist[getVar("icon")]+name;
-            downloadFile(input, dir);
+            if(input.match(/http/g)){
+                downloadFile(input, dir);
+            }else if(input.match(/hiker/g)){
+               input= input.replace("hiker://files/","/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/")
+                file.copyFile(input, getPath(dir).slice(7), true)
+            }else if(input.match(/\/storage/g)){
+                file.copyFile(input, getPath(dir).slice(7), true)
+            }else {
+                "toast://请输入正确地址"
+            }
+
             if(fileExist(dir)){
                 refreshPage(false);
                 return "toast://添加成功";
@@ -178,7 +188,7 @@ function F(){
             for (var i in list) {
                 let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon")]+ list[i];
                 d.push({
-                    col_type: "icon_small_4",
+                    col_type: "icon_round_4",
                     title: list[i],
                     extra:{longClick: [ {
                             title: " 删除 ",
