@@ -45,7 +45,7 @@ function F(){
     }
     if(getItem("icon") !==""){
     var d = [];
-    if (getVar("icon")==""){
+    if (getVar("icon1")==""){
         putVar("icon1", "0");
     }
 
