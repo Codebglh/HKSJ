@@ -11,6 +11,16 @@ let namelist = [
     "其他",
     "图片",
     "头像",];
+function getImg(filePath) {
+    let file = $.require("https://hikerfans.com/weisyr/js/file.js");
+    var folder = file.getFolder(filePath);
+    var list = [];
+    for (var i in folder) {
+        var path = folder[i].name;
+        list.push(path);
+    }
+    return list;
+}
 function F(){
     var d = [];
     for (let i in namelist) {
@@ -25,8 +35,7 @@ function F(){
             col_type: "scroll_button",
         });
     }
-    switch (getVar("icon")) {
-        case 0:
+    if (getVar("icon")==0) {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
             for (var i in list) {
@@ -71,8 +80,8 @@ function F(){
                         return "toast://复制失败";
                     }
                 }),
-            });
-        case 1:
+            });}else if(getVar("icon")==1)
+            {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
             for (var i in list) {
@@ -117,8 +126,8 @@ function F(){
                         return "toast://复制失败";
                     }
                 }),
-            });
-        case 2:
+            });}else if(getVar("icon")==2)
+            {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
             for (var i in list) {
@@ -163,8 +172,8 @@ function F(){
                         return "toast://复制失败";
                     }
                 }),
-            });
-        case 3:
+            });}else if(getVar("icon")==3)
+            {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
             for (var i in list) {
@@ -209,8 +218,8 @@ function F(){
                         return "toast://复制失败";
                     }
                 }),
-            });
-        case 4:
+            });}else if(getVar("icon")==4)
+            {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
             for (var i in list) {
@@ -255,18 +264,8 @@ function F(){
                         return "toast://复制失败";
                     }
                 }),
-            });
-    }
+            });}
+
     setResult(d);
 }
 
-function getImg(filePath) {
-    let file = $.require("https://hikerfans.com/weisyr/js/file.js");
-    var folder = file.getFolder(filePath);
-    var list = [];
-    for (var i in folder) {
-        var path = folder[i].name;
-        list.push(path);
-    }
-    return list;
-}
