@@ -5,6 +5,8 @@ let pathlist = [
     "tu/",
     "avatar/"
 ];
+let localhost = "hiker://files/bgHouse/src/";
+let url =  "https://gitea.com/bgcode/hikerrule/raw/branch/main/code/src/";
 let numberlist =  [
     22,
     10,
