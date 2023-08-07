@@ -107,10 +107,10 @@ function F(){
         },)
 
     if (getVar("icon1")==0) {
-            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
+            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon1")]
             var list = getImg(filePath);
             for (var i in list) {
-                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon")]+ list[i];
+                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon1")]+ list[i];
                 d.push({
                     col_type: "icon_small_4",
                     title: list[i],
@@ -132,10 +132,10 @@ function F(){
             };
            }else if(getVar("icon1")==1)
             {
-            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
+            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon1")]
             var list = getImg(filePath);
             for (var i in list) {
-                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon")]+ list[i];
+                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon1")]+ list[i];
                 d.push({
                     col_type: "icon_small_4",
                     title: list[i],
@@ -156,10 +156,10 @@ function F(){
             };
            }else if(getVar("icon1")==2)
             {
-            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
+            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon1")]
             var list = getImg(filePath);
             for (var i in list) {
-                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon")]+ list[i];
+                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon1")]+ list[i];
                 d.push({
                     col_type: "icon_small_4",
                     title: list[i],
@@ -180,10 +180,10 @@ function F(){
             };
             }else if(getVar("icon1")==3)
             {
-            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
+            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon1")]
             var list = getImg(filePath);
             for (var i in list) {
-                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon")]+ list[i];
+                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon1")]+ list[i];
                 d.push({
                     col_type: "movie_2",
                     title: list[i],
@@ -204,10 +204,10 @@ function F(){
             };
             }else if(getVar("icon1")==4)
             {
-            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
+            var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon1")]
             var list = getImg(filePath);
             for (var i in list) {
-                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon")]+ list[i];
+                let pic = "hiker://files/bgHouse/src/" +pathlist[getVar("icon1")]+ list[i];
                 d.push({
                     col_type: "icon_round_4",
                     title: list[i],
