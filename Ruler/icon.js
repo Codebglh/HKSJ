@@ -21,6 +21,7 @@ function getImg(filePath) {
     }
     return list;
 }
+
 function F(){
     var d = [];
     for (let i in namelist) {
@@ -37,7 +38,7 @@ function F(){
     }
     d.push({
         col_type: "icon_2",
-        title: "上传本地图片获取链接",
+        title: "上传本地图片",
         pic_url:"hiker://files/bgHouse/src/system/19.svg",
         url: "fileSelect://" + $.toString(()=>{
             let file = $.require("https://hikerfans.com/weisyr/js/file.js");
@@ -46,27 +47,34 @@ function F(){
             let name = file.getName(input).replace("_fileSelect_", "");
             let path = dir + name;
             if(file.copyFile(input, getPath(path).slice(7), true)){
-                return "copy://"+path;
+                refreshPage(false);
+                return "toast://添加成功";
             }else{
-                return "toast://复制失败";
+                refreshPage(false);
+                return "toast://添加失败";
             }
+
         }),
     }, {
         col_type: "icon_2",
-        title: "上传网络图片获取链接",
+        title: "上传网络图片",
         pic_url:"hiker://files/bgHouse/src/system/19.svg",
-        url: "fileSelect://" + $.toString(()=>{
-            let file = $.require("https://hikerfans.com/weisyr/js/file.js");
-            let dir = "hiker://files/bgHouse/img/";
-            let name = file.getName(input).replace("_fileSelect_", "");
-            let path = dir + name;
-            if(file.copyFile(input, getPath(path).slice(7), true)){
-                return "copy://"+path;
+        url: $("","请输入地址").input(function () {
+            let name=input.split("/").at(-1);
+
+            require(config.依赖);
+            let dir = "hiker://files/bgHouse/src/"+pathlist[getVar("icon")]+name;
+            downloadFile(input, dir);
+            if(fileExist(dir)){
+                refreshPage(false);
+                return "toast://添加成功";
             }else{
-                return "toast://复制失败";
+                refreshPage(false);
+                return "toast://添加失败";
             }
-        }),
-    });
+        })
+        },)
+
     if (getVar("icon")==0) {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
@@ -80,7 +88,7 @@ function F(){
                             js: $.toString((pic) => {
                                 deleteFile(pic)
                                 refreshPage();
-                                toast("轮播已停止");
+                                toast("图片已删除");
                             },pic),
                         },]},
                     pic_url: pic,
@@ -105,7 +113,7 @@ function F(){
                             js: $.toString((pic) => {
                                 deleteFile(pic)
                                 refreshPage();
-                                toast("轮播已停止");
+                                toast("图片已删除");
                             },pic),
                         },]},
                     pic_url: pic,
@@ -129,7 +137,7 @@ function F(){
                             js: $.toString((pic) => {
                                 deleteFile(pic)
                                 refreshPage();
-                                toast("轮播已停止");
+                                toast("图片已删除");
                             },pic),
                         },]},
                     pic_url: pic,
@@ -153,7 +161,7 @@ function F(){
                             js: $.toString((pic) => {
                                 deleteFile(pic)
                                 refreshPage();
-                                toast("轮播已停止");
+                                toast("图片已删除");
                             },pic),
                         },]},
                     pic_url: pic,
@@ -177,7 +185,7 @@ function F(){
                             js: $.toString((pic) => {
                                 deleteFile(pic)
                                 refreshPage();
-                                toast("轮播已停止");
+                                toast("图片已删除");
                             },pic),
                         },]},
                     pic_url: pic,
