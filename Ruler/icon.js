@@ -45,7 +45,10 @@ function F(){
     }
     if(getItem("icon") !==""){
     var d = [];
-    putVar("icon1", "0");
+    if (getVar("icon")==""){
+        putVar("icon1", "0");
+    }
+
     for (let i in namelist) {
         d.push({
             title:
