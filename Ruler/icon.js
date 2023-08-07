@@ -5,6 +5,20 @@ let pathlist = [
     "tu/",
     "avatar/"
 ];
+let numberlist =  [
+    22,
+    10,
+    4,
+    3,
+    2
+];
+let typelist = [
+    ".svg",
+    ".png",
+    ".svg",
+    ".jpg",
+    ".jpeg"
+];
 let namelist = [
     "系统",
     "更多",
@@ -23,6 +37,11 @@ function getImg(filePath) {
 }
 
 function F(){
+    panduan()
+    if (getItem("icon")=="yes"){
+        download();
+    }
+    if(getItem("icon") !==""){
     var d = [];
     for (let i in namelist) {
         d.push({
@@ -47,10 +66,10 @@ function F(){
             let name = file.getName(input).replace("_fileSelect_", "");
             let path = dir + name;
             if(file.copyFile(input, getPath(path).slice(7), true)){
-                refreshPage(false);
+                refreshPage(true);
                 return "toast://添加成功";
             }else{
-                refreshPage(false);
+                refreshPage(true);
                 return "toast://添加失败";
             }
 
@@ -76,10 +95,10 @@ function F(){
             }
 
             if(fileExist(dir)){
-                refreshPage(false);
+                refreshPage(true);
                 return "toast://添加成功";
             }else{
-                refreshPage(false);
+                refreshPage(true);
                 return "toast://添加失败";
             }
         })
@@ -208,5 +227,62 @@ function F(){
             }
 
     setResult(d);
+    }
 }
 
+function download() {
+    var max = numberlist.reduce(function (a, b) {
+        return parseInt(a) + parseInt(b)
+    })
+    let bbb = 0
+    for (let i = 0; i < numberlist.length; i++) {
+        for (let j = 1; j < numberlist[i] + 1; j++) {
+            let url1 = url + pathlist[i] + j + typelist[i];
+            let pic = localhost + pathlist[i] + j + typelist[i];
+            bbb += 1;
+
+            try {
+                if (!fileExist(pic)) {
+                    downloadFile(url1, pic);
+                    log("下载到" + parseInt(bbb * (100 / max)) + "%");
+                }
+            } catch (e) {
+                log(e + url1);
+            }
+
+        }
+    }
+}
+function panduan() {
+    if (getItem("icon", "") == "") {
+        var d = [];
+        var text = "是否下载自带图标库？\n"+
+            "同意即可下载                 不同意也可继续使用小程序\n";
+        d.push({
+            title: text,
+            col_type: 'rich_text',
+            url: "hiker://empty",
+            extra: {lineSpacing: 10, textSize: 18}
+        });
+        d.push({
+            title: "同意",
+            col_type: 'text_2',
+            url: $("#noLoading#").lazyRule(() => {
+                setItem("icon", "yes")
+                refreshPage(false);
+                return 'toast://开始下载图标大约1分钟'
+            })
+        });
+        d.push({
+            title: "不同意",
+            col_type: 'text_2',
+            url: $().lazyRule(() => {
+                setItem("icon", "no");
+                refreshPage(true);
+                return "hiker://empty";
+            },),
+        })
+        setResult(d)
+
+    }
+}
