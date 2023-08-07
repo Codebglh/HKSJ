@@ -48,9 +48,9 @@ function F(){
     for (let i in namelist) {
         d.push({
             title:
-                i === getVar("icon", "0") ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>" : namelist[i],
+                i === getVar("icon1", "0") ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>" : namelist[i],
             url: $().lazyRule((i) => {
-                putVar("icon", i);
+                putVar("icon1", i);
                 refreshPage(true);
                 return "hiker://empty";
             }, i),
@@ -106,7 +106,7 @@ function F(){
         })
         },)
 
-    if (getVar("icon")==0) {
+    if (getVar("icon1")==0) {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
             for (var i in list) {
@@ -130,7 +130,7 @@ function F(){
                     }, pic),
                 });
             };
-           }else if(getVar("icon")==1)
+           }else if(getVar("icon1")==1)
             {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
@@ -154,7 +154,7 @@ function F(){
                     }, pic),
                 });
             };
-           }else if(getVar("icon")==2)
+           }else if(getVar("icon1")==2)
             {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
@@ -178,7 +178,7 @@ function F(){
                     }, pic),
                 });
             };
-            }else if(getVar("icon")==3)
+            }else if(getVar("icon1")==3)
             {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
@@ -202,7 +202,7 @@ function F(){
                     }, pic),
                 });
             };
-            }else if(getVar("icon")==4)
+            }else if(getVar("icon1")==4)
             {
             var filePath="/storage/emulated/0/Android/data/com.example.hikerview/files/Documents/bgHouse/src/"+pathlist[getVar("icon")]
             var list = getImg(filePath);
