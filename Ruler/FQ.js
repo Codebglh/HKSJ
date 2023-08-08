@@ -1,7 +1,7 @@
 function F() {
   var display = [];
   var data = JSON.parse(
-    fetch("https://cdn.jsdelivr.net/gh/Codebglh/HKSJ@0.1.6/Ruler/FQ.json")
+    fetch("https://cdn.jsdelivr.net/gh/Codebglh/HKSJ@0.1./Ruler/FQ.json")
   );
   var app_list = data.list;
   for (let i in app_list) {
