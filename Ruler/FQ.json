@@ -1,0 +1,19 @@
+{
+  "list": [
+    "clash"
+  ],
+  "clash": {
+    "name": [
+      "foss-clash",
+      "premium-clash"
+    ],
+    "url": [
+      "https://ghproxy.com/https://github.com/Kr328/ClashForAndroid/releases/download/v2.5.12/cfa-2.5.12-foss-universal-release.apk",
+      "https://ghproxy.com/https://github.com/Kr328/ClashForAndroid/releases/download/v2.5.12/cfa-2.5.12-premium-universal-release.apk"
+    ],
+    "pic_url": [
+      "hiker://files/bgHouse/src/system/clashLogo.png",
+      "hiker://files/bgHouse/src/system/clashLogo.png"
+    ]
+  }
+}
