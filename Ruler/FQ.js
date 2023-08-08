@@ -7,7 +7,7 @@ function F(){
     var name=["foss-clash","premium-clash"]
     var  display=[];
 
-    for(let i in url_back){
+    for(let i in name){
         display.push({
             title:name,
             col_type: "icon_4",
