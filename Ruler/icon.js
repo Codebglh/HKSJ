@@ -68,7 +68,7 @@ function F(){
         url: "fileSelect://" + $.toString(()=>{
             let file = $.require("https://hikerfans.com/weisyr/js/file.js");
             require(config.依赖);
-            let dir = "hiker://files/bgHouse/src/"+pathlist[getVar("icon")];
+            let dir = "hiker://files/bgHouse/src/"+pathlist[getVar("icon1")];
             let name = file.getName(input).replace("_fileSelect_", "");
             let path = dir + name;
             if(file.copyFile(input, getPath(path).slice(7), true)){
@@ -88,7 +88,7 @@ function F(){
             let name=input.split("/").at(-1);
             let file = $.require("https://hikerfans.com/weisyr/js/file.js");
             require(config.依赖);
-            let dir = "hiker://files/bgHouse/src/"+pathlist[getVar("icon")]+name;
+            let dir = "hiker://files/bgHouse/src/"+pathlist[getVar("icon1")]+name;
             if(input.match(/http/g)){
                 downloadFile(input, dir);
             }else if(input.match(/hiker/g)){
@@ -122,7 +122,7 @@ function F(){
                             title: " 删除 ",
                             js: $.toString((pic) => {
                                 deleteFile(pic)
-                                refreshPage();
+                                refreshPage(false);
                                 toast("图片已删除");
                             },pic),
                         },]},
@@ -147,7 +147,7 @@ function F(){
                             title: " 删除 ",
                             js: $.toString((pic) => {
                                 deleteFile(pic)
-                                refreshPage();
+                                refreshPage(false);
                                 toast("图片已删除");
                             },pic),
                         },]},
@@ -171,7 +171,7 @@ function F(){
                             title: " 删除 ",
                             js: $.toString((pic) => {
                                 deleteFile(pic)
-                                refreshPage();
+                                refreshPage(false);
                                 toast("图片已删除");
                             },pic),
                         },]},
@@ -195,7 +195,7 @@ function F(){
                             title: " 删除 ",
                             js: $.toString((pic) => {
                                 deleteFile(pic)
-                                refreshPage();
+                                refreshPage(false);
                                 toast("图片已删除");
                             },pic),
                         },]},
@@ -219,7 +219,7 @@ function F(){
                             title: " 删除 ",
                             js: $.toString((pic) => {
                                 deleteFile(pic)
-                                refreshPage();
+                                refreshPage(false);
                                 toast("图片已删除");
                             },pic),
                         },]},
