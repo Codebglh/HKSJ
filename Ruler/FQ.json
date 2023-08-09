@@ -1,7 +1,8 @@
 {
   "list": [
     "clash",
-    "legado"
+    "legado",
+    "MultiTTs"
   ],
   "clash": {
     "name": [
@@ -21,5 +22,10 @@
     "name": ["legado_app","legado_lollipop"],
     "url": ["https://ghproxy.com/https://github.com/gedoor/legado/releases/download/3.23.073011/legado_app_3.23.073011.apk","https://ghproxy.com/https://github.com/gedoor/legado/releases/download/3.23.073011/legado_lollipop_3.23.073011.apk"],
     "pic_url": ["hiker://files/bgHouse/src/system/legado.png","hiker://files/bgHouse/src/system/legado.png"]
+  },
+  "MultiTTs": {
+    "name": ["MultiTTs","voice","hanip数据包"],
+    "url":["https://59-47-225-47.d.cjjd15.com:30443/download-cdn.123pan.cn/123-193/461b0b8a/1812054943-0/461b0b8a122d70a5e23170c19bdee0c1/c-m2?v=5&t=1691638950&s=1691638950118be2cf55542ded4b0b9ec5e845c4dd&r=EDAGVM&bzc=1&bzs=1816304875&filename=MultiTTS_1.3.2.apk","https://59-47-225-43.d.cjjd15.com:30443/download-cdn.123pan.cn/123-238/be2cd98f/1812054943-0/be2cd98f3eb9b01e175b375329c8a4ee/c-m11?v=5&t=1691639293&s=1691639293b16c1a5ee9566ffc846bd0b39c3ab7f2&r=Y76CRK&bzc=1&bzs=1816304875&filename=voice.zip","https://59-47-225-44.d.cjjd15.com:30443/download-cdn.123pan.cn/123-58/bf7bd299/1812054943-0/bf7bd29930a4f78dc477caaa2175003a/c-m2?v=5&t=1691639755&s=1691639755d7283815275fbea0cae8ca1b4854d19e&r=KGN418&bzc=1&bzs=1816304875&filename=hanlp%E6%95%B0%E6%8D%AE%E5%8C%85.zip"],
+    "pic_url": ["http://pic.danji100.com/upload/2023-3/2023031509122251429.png","http://pic.danji100.com/upload/2023-3/2023031509122251429.png","http://pic.danji100.com/upload/2023-3/2023031509122251429.png"]
   }
 }
