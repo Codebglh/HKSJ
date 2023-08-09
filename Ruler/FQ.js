@@ -14,7 +14,7 @@ function getColor(){
 function F() {
   var display = [];
   var data = JSON.parse(
-    fetch("https://cdn.jsdelivr.net/gh/Codebglh/HKSJ@0.1.9/Ruler/FQ.json")
+    fetch("https://cdn.jsdelivr.net/gh/Codebglh/HKSJ@0.2.0/Ruler/FQ.json")
   );
   var app_list = data.list;
   for (let i in app_list) {
