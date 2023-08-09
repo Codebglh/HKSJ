@@ -1,6 +1,7 @@
 {
   "list": [
-    "clash"
+    "clash",
+    "legado"
   ],
   "clash": {
     "name": [
@@ -15,5 +16,10 @@
       "hiker://files/bgHouse/src/system/clashLogo.png",
       "hiker://files/bgHouse/src/system/clashLogo.png"
     ]
+  },
+  "legado": {
+    "name": ["legado_app","legado_lollipop"],
+    "url": ["https://ghproxy.com/https://github.com/gedoor/legado/releases/download/3.23.073011/legado_app_3.23.073011.apk","https://ghproxy.com/https://github.com/gedoor/legado/releases/download/3.23.073011/legado_lollipop_3.23.073011.apk"],
+    "pic_url": ["hiker://files/bgHouse/src/system/legado.png","hiker://files/bgHouse/src/system/legado.png"]
   }
 }
