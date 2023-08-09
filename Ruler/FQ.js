@@ -29,7 +29,7 @@ function F() {
       display.push({
         title: names[j],
         col_type: "icon_4",
-        url: app_detail.url[j],
+        url: "download://"+app_detail.url[j],
         pic_url: app_detail.pic_url[j],
       });
     }
