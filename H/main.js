@@ -65,17 +65,14 @@ function Frist() {
         message = "&orderType=3&subjectName=&filmName=" + getVar("HH", "");
     }
     let header="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
-    if (MY_PAGE != 4) {
+
         var MY_URL = "https://www.mhorg.xyz/?page.currentPage=" + MY_PAGE + "&orderType=3&subjectName=&filmName=" + message;
         var html = fetch(MY_URL,{headers:{"User-Agent":header
 }});
 
-    }
-if(MY_PAGE ==1){
-    log(html)
-}
-    var tit = xpathArray(html, '//*[@id="app"]/div[4]/div/div/div/div/div/a/img/@title');
-    var url = xpathArray(html, '//*[@id="app"]/div[4]/div/div[2]/div[1]/div/div[1]/a/@onclick');
+
+    var tit = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/img/@title');
+    var url = xpathArray(html, '//*[@id="app"]/div/div/div[2]/div[1]/div/div[1]/a/@onclick');
     var pic = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/img/@src');
     log(url.length+""+tit.length+""+pic.length);
     for (var i = 0; i < url.length; i++) {
@@ -140,24 +137,14 @@ function Secend() {
             return "#noHistory#hiker://empty"
         }),
         pic_url: "hiker://files/bgHouse/src/" + "more/7.png",
-        col_type: "icon_small_3",
-    })
-    a.push({
-        title: "剧情",
-        desc: "",
-        url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
-            setResult([{title: description, col_type: "long_text"}]);
-        }, description),
-        pic_url: "hiker://files/bgHouse/src/" + "more/8.png",
-        col_type: "icon_small_3",
-        extra: {"inheritTitle": false}//不继承标题
+        col_type: "icon_2",
     })
     a.push({
         title: "下载",
         desc: "",
         url: "hiker://page/download.view#noRecordHistory##noRefresh##noHistory#?rule=本地资源管理",
         pic_url: "hiker://files/bgHouse/src/" + "system/2.svg",
-        col_type: "icon_small_3",
+        col_type: "icon_2",
         extra: {
             chapterList: xiazai,
             info: {
