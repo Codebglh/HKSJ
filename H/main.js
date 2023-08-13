@@ -67,14 +67,14 @@ function Frist() {
     let header="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
 
         var MY_URL = "https://www.mhorg.xyz/?page.currentPage=" + MY_PAGE + "&orderType=3&subjectName=&filmName=" + message;
-        var html = fetch(MY_URL,{headers:{"User-Agent":header
+        var html = fetch(MY_URL,{headers:{"User-Agent":PC_UA
 }});
 
 
     var tit = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/img/@title');
     var url = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/@onclick');
-    var pic = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/img/@src');
-    log(html);
+    var pic = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/img/@data-original');
+    // log(html);
     for (var i = 0; i < url.length; i++) {
         tit[i]=tit[i].replace(/\s|'|\/|\\|"|;|\(|\)|\?/g,'a')
         d.push(
