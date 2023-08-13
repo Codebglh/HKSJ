@@ -41,6 +41,7 @@ function getImg(filePath) {
 function F(){
     panduan()
     if (getItem("icon")=="yes"){
+        setItem("icon","no")
         download();
     }
     if(getItem("icon") !==""){
@@ -282,9 +283,9 @@ function panduan() {
         d.push({
             title: "不同意",
             col_type: 'text_2',
-            url: $().lazyRule(() => {
+            url: $("#noLoading#").lazyRule(() => {
                 setItem("icon", "no");
-                refreshPage(true);
+                refreshPage(false);
                 return "hiker://empty";
             },),
         })
