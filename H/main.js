@@ -72,7 +72,7 @@ function Frist() {
 
 
     var tit = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/img/@title');
-    var url = xpathArray(html, '//*[@id="app"]/div/div/div[2]/div[1]/div/div[1]/a/@onclick');
+    var url = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/@onclick');
     var pic = xpathArray(html, '//*[@id="app"]/div/div/div/div/div/div/a/img/@src');
     log(url.length+""+tit.length+""+pic.length);
     for (var i = 0; i < url.length; i++) {
