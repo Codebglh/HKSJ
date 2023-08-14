@@ -25,11 +25,18 @@ function F() {
     });
     let app_detail = eval("data."+app_list[i]);
     let names = app_detail.name;
+    let url
+
     for (let j in names) {
+      if(app_detail.url[j].match(/yuedu/g)){
+        url = app_detail.url[j]
+      }else {
+        url= "download://"+app_detail.url[j];
+      }
       display.push({
         title: names[j],
         col_type: "icon_4",
-        url: "download://"+app_detail.url[j],
+        url:url ,
         pic_url: app_detail.pic_url[j],
       });
     }
