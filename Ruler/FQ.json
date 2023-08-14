@@ -19,9 +19,9 @@
     ]
   },
   "legado": {
-    "name": ["legado_app","legado_lollipop"],
-    "url": ["https://ghproxy.com/https://github.com/gedoor/legado/releases/download/3.23.073011/legado_app_3.23.073011.apk","https://ghproxy.com/https://github.com/gedoor/legado/releases/download/3.23.073011/legado_lollipop_3.23.073011.apk"],
-    "pic_url": ["hiker://files/bgHouse/src/system/legado.png","hiker://files/bgHouse/src/system/legado.png"]
+    "name": ["legado_app","legado_lollipop","书源订阅"],
+    "url": ["https://ghproxy.com/https://github.com/gedoor/legado/releases/download/3.23.073011/legado_app_3.23.073011.apk","https://ghproxy.com/https://github.com/gedoor/legado/releases/download/3.23.073011/legado_lollipop_3.23.073011.apk","yuedu://booksource/importonline?src=https://cdn.jsdelivr.net/gh/Codebglh/yuedu@0.0.1/All/BookRsources.json"],
+    "pic_url": ["hiker://files/bgHouse/src/system/legado.png","hiker://files/bgHouse/src/system/legado.png","hiker://files/bgHouse/src/system/legado.png"]
   },
   "MultiTTs": {
     "name": ["MultiTTs","voice","hanip数据包"],
